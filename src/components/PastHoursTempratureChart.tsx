@@ -24,9 +24,8 @@ const PastHoursTemperatureChart = ({ city_id }: { city_id: string }) => {
 
   const fetchPastTemperatureData = async () => {
     try {
-      const data = await fetchTemperatureForPastHoursByCity(city_id); // Fetch past 8 hours
+      const data = await fetchTemperatureForPastHoursByCity(city_id); 
       setTemperatureData(data);
-      console.log("Past Hours: ", data);
       setLoading(false);
     } catch (error) {
       console.error('Error fetching temperature data:', error);

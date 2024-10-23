@@ -25,7 +25,6 @@ const WeatherCard: React.FC<IWeatherData> = ({
   const navigate = useNavigate();
 
   const navigateToDetailPage = (city_id: string) => {
-    console.log("navigateToDetailPage with city: " + city_id);
     navigate(`/weather/${city_id}`);
   }
 

@@ -14,9 +14,7 @@ const Home: React.FC = () => {
 
   const fetchWeather = async () => {
     try {
-      console.log("Current weather");
       const data= await fetchCurrentWeatherForAllCities();
-      console.log(data);
       setWeatherData(data);
       checkAlerts(data);
     } catch (error) {

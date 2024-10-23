@@ -8,7 +8,6 @@ const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
 export const fetchCurrentWeatherForAllCities = async () => {
   try {
-    console.log("Fetching weather updates...: ", API_ENDPOINT);
     const response = await fetch(`${API_ENDPOINT}/weather/current`);
     
     // Check if the response is ok (status in the range 200-299)
@@ -27,7 +26,6 @@ export const fetchCurrentWeatherForAllCities = async () => {
 
 export const fetchCurrentWeatherByCity = async (city_id: string) => {
   try {
-    console.log("Fetching weather updates...");
     const response = await fetch(`${API_ENDPOINT}/weather/current?city_id=${city_id}`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
