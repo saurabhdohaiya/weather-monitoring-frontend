@@ -1,46 +1,73 @@
-# Getting Started with Create React App
+# Weather Monitoring Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://github.com/user-attachments/assets/21a960b1-d6c0-4c16-9d72-5f1b4e77f7c2)
 
-## Available Scripts
 
-In the project directory, you can run:
+**Live Demo:** [Live View](https://weather-monitoring-frontend.onrender.com/)  
+**GitHub Links:**  
+- **Frontend:** [GitHub Repository for Frontend](https://github.com/saurabhdohaiya/weather-monitoring-frontend)  
+- **Backend:** [GitHub Repository for Backend](https://github.com/saurabhdohaiya/weather-monitoring-backend)  
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The Weather Monitoring Application provides users with real-time weather updates, past weather data, and daily summaries. It features an intuitive user interface and responsive design, allowing users to interactively visualize weather information.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
+1. **Current Weather Data**
+   - Users can view real-time weather information for a specified city, including:
+     - Temperature
+     - Feels-like temperature
+     - Weather conditions (e.g., sunny, cloudy)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Integration with OpenWeatherMap**
+   - The application integrates with the OpenWeatherMap API to fetch accurate and up-to-date weather data, ensuring that users receive reliable information based on global weather conditions.
 
-### `npm run build`
+3. **Past 8 Hours Data**
+   - The application visualizes average temperature and feels-like temperature for the past 8 hours, enabling users to track recent weather changes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Daily Summaries**
+   - Daily summaries are saved and include:
+     - Date
+     - Average temperature
+     - Minimum temperature
+     - Maximum temperature
+     - Dominant weather condition
+   - This feature allows users to easily review historical weather data.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. **Temperature Conversion Utility**
+   - Users can convert temperatures from Celsius to Fahrenheit, enhancing usability for different regions and user preferences.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. **Alert Module**
+   - Users can set alerts based on specific weather conditions and temperatures, ensuring they are notified of significant weather changes.
 
-### `npm run eject`
+7. **Data Storage**
+   - A dedicated MongoDB database is utilized for storing weather data and daily summaries, ensuring that all relevant information is aggregated and rolled up daily for accurate historical records.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+8. **Real-Time Updates**
+   - The application updates weather data every 5 minutes, ensuring users have access to the latest information.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+9. **Responsive Design and Interactive UI**
+   - The application is designed to be responsive, ensuring a seamless experience on various devices. The user interface is interactive, allowing for smooth navigation and data visualization.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![image](https://github.com/user-attachments/assets/d6f31871-c4ab-4208-a451-7fff2e9304ca)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+10. **Visualization using ChartJS**
+    - ChartJS is used for visualizing weather data, providing graphical representations of temperature trends and summaries.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+11. **Error Handling**
+    - The application includes robust error handling, displaying clear error messages to users in case of issues such as network errors or invalid inputs.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+12. **Loading State with Shimmer Effect**
+    - While data is being fetched, a shimmer effect is displayed to indicate loading, enhancing the user experience by providing visual feedback.
+
+## Routes
+
+- **GET /api/weather/current:** Fetch current weather data for a specified city.
+- **GET /api/weather/history?past_hours_count=8:** Retrieve past 8 hours of weather data(if present in DB).
+- **POST /api/weather/history?past_days_count=8:** Retrieve past 8 days of weather data(if Present if DB).
+
+## Conclusion
+
+This Weather Monitoring Application is designed to provide users with comprehensive and user-friendly access to weather data, enhancing their ability to plan and respond to changing weather conditions effectively.
